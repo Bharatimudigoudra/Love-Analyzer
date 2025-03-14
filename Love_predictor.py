@@ -60,6 +60,7 @@ st.write("Find out your relationship type and love percentage!")
 name1 = st.text_input("💌 Enter Your Name:", placeholder="Type your name...")
 name2 = st.text_input("💘 Enter Your Crush/Love's Name:", placeholder="Type their name...")
 
+
 if st.button("Calculate"):
     if name1 and name2:
         # Compute results
