@@ -67,6 +67,15 @@ if st.button("Calculate"):
         relationship = flames_game(name1, name2)
         love_percentage = love_calculator(name1, name2)
 
+        # Store Data in MongoDB
+        data_entry = {
+            "name1": name1.capitalize(),
+            "name2": name2.capitalize(),
+            "relationship": relationship,
+            "love_percentage": love_percentage
+        }
+        collection.insert_one(data_entry)
+        
         # Display results
         st.subheader("🔮 Relationship Result:")
         st.success(f"The relationship between {name1.capitalize()} and {name2.capitalize()} is: **{relationship}!** 💞")
